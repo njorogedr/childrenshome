@@ -23,13 +23,20 @@ body {
   overflow-x: hidden;
   padding-top: 90px;
   margin: 0;
-  background-color: lightblue;
   font-family: 'Georgia', serif;
   line-height: 1.6;
   color: var(--text-dark);
   position: relative;
 }
 
+.utility-container{
+  border: 2px solid red;
+  width: 95%;
+  margin-left: 2.5rem;
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+}
 section {
   scroll-margin-top: 120px;
   padding: 30px 0;
@@ -44,18 +51,14 @@ section {
   align-items: center;
   background-color: var(--primary-color);
   padding: 1rem 2rem;
-  position: fixed;
   top: 0;
   width: 100%;
   max-width: 100%;
-  box-sizing: border-box;
-  z-index: 1000;
-  overflow-x: hidden;
 }
 
 .nav-left, .nav-right {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex: 1;
 }
 
@@ -68,7 +71,7 @@ section {
 }
 
 .nav-logo {
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: var(--text-light);
   text-align: center;
@@ -95,7 +98,7 @@ section {
 .hamburger {
   display: none;
 }
-
+/* 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
@@ -207,7 +210,7 @@ section {
     opacity: 0;
   }
 }
-
+ 
 @keyframes slideDown {
   from {
     transform: translateY(-10px);
@@ -218,72 +221,55 @@ section {
     opacity: 1;
   }
 }
+ 
 
 /* Hero Section */
 .card1 {
-  width: 90%;
-  max-width: 1200px;
-  height: 500px;
-  margin: 40px auto 0;
+  width: 100%;
+  max-width: 1500px;
+  height: 70vh;
   background-color: var(--s);
-  border-radius: 40px;
-  overflow: hidden;
+  border-radius: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   color: var(--text-light);
-  text-align: center;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: relative;
   background-color: #666;
-}
-
-.card1-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: brightness(0.6);
-}
-
-.card1-content {
-  position: relative;
-  z-index: 1;
-  
+  background-image: url(../assets/happy\ kid.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: blue
+  ;
 }
 
 .card1 h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  text-align: center;
 }
 
 .card1 p {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  max-width: 700px;
+  font-size: 1.5rem;
   line-height: 1.6;
-  text-align: center;
+  padding-left: 5rem;
+  font-weight: 700;
 }
 
-.card1 a {
+.card1  button{
   text-decoration: none;
   color: var(--text-light);
   background-color: var(--primary-color);
-  padding: 1rem 2.5rem;
+  margin-left: 12rem;
+  margin-top: 2rem;
+  padding: .5rem 1rem;
   border-radius: 30px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: all var(--transition-speed) ease;
 }
 
-.card1 a:hover {
+.card1 button:hover {
   background-color: var(--accent-color);
   color: var(--text-dark);
   transform: translateY(-3px);
@@ -292,37 +278,31 @@ section {
 
 /* About Section */
 .card2 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 60px auto 0;
+  width: 100%;
+  height: 80vh;
+  max-width: 1500px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  position: relative;
-  
+  gap: 2rem;
 }
 
 .card2a {
-  flex: 1;
-  min-width: 300px;
-  padding: 40px;
+width:50% ;
 }
 
-.card2 h1 {
+.card2a h1 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.3;
   color: var(--primary-color);
+  padding-bottom: 3rem;
 }
 
-.card2 p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+.card2a p {
+  font-size: 1.3rem;
   line-height: 1.6;
+  padding-bottom: 3rem;
+  padding-right: 10rem;
 }
 
-.card2 a {
+.card2a button{
   display: inline-block;
   text-decoration: none;
   color: var(--text-light);
@@ -331,12 +311,17 @@ section {
   border-radius: 30px;
   font-weight: bold;
   transition: all var(--transition-speed) ease;
+  border: none;
+  width: 200px;
+  font-size: 1.3rem;
 }
 
-.card2 a:hover {
-  background-color: var(--secondary-color);
+.card2a button:hover {
+  background-color: white;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid blue;
+  color: blue;
 }
 
 .card2b {
@@ -355,126 +340,154 @@ section {
 
 /* Services Section */
 .card3 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 60px 0;
-  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  color: blue;
+  align-items: center;
 }
 
-.card3 p:first-child {
+.card3 p{
+  font-size: 1.3rem;
+  padding: 0 20rem;
+}
+
+.card3 h6 {
   font-size: 1rem;
-  color: var(--secondary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
 }
-
 .card3 h1 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
   color: blue;
-}
-
-.card3 .p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
 }
 
 /* Products Section */
 .card4 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
+  width: 100%;
+  max-width: 1500px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  position: relative;
+  gap: 2rem;
 }
 
-.card4a, .card4b {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+.card4a{
+  width: 700px;
+  background-color: blue;
+  height: 50vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 2rem;
+  color: white;
+  
+  padding: 1rem 2rem;
+  padding-right: 10rem;
 }
 
-.card4a {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+.card4a h1{
+  font-size: 2.5rem;
 }
 
-.card4b {
-  background-color: var(--background-dark);
+.card4a p{
+  font-size: 1.3rem;
+  padding-top: 1rem;
 }
 
-.card4 h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.3;
+.card4a button{
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  background-color: white;
+  color: blue;
+  border: none;
+  width: 200px;
+  border-radius: 2rem;
+  height: 40px;
 }
 
-.card4 p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+.card4a button:hover{
+  font-size: 1.3rem;
+  background-color: blue;
+  color: white;
+  border: 2px solid white;
 }
 
-.card4 a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: all var(--transition-speed) ease;
+.card4b{
+  border-radius: 2rem;
+  width: 700px;
+  background-color: skyblue;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  padding: 1rem 2rem;
+  padding-right: 10rem;
+
 }
 
-.card4a a {
-  color: var(--primary-color);
-  background-color: var(--accent-color);
+
+.card4b h1{
+  font-size: 2.5rem;
 }
 
-.card4b a {
-  color: var(--text-light);
-  background-color: var(--primary-color);
+.card4b p{
+  font-size: 1.3rem;
+  padding-top: 2rem;
 }
 
-.card4 a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.card4b button{
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  background-color: white;
+  color: blue;
+  border: none;
+  width: 200px;
+  border-radius: 2rem;
+  height: 40px;
 }
 
+.card4b button:hover{
+  font-size: 1.3rem;
+  background-color: blue;
+  color: white;
+  border: 2px solid white;
+}
 /* Premium Products Section */
+
+.card55{
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1500px;
+    border-radius: 2rem;
+  
+}
 .card5 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 60px auto;
-  text-align: center;
-  padding: 60px;
-  background-color: var(--background-dark);
   border-radius: 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+  padding:1rem;
+  gap: 2rem;
+  
 }
 
 .card5 h1 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
   color: var(--primary-color);
 }
 
 .card5 p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
-.card5 a {
+.card5 button {
   display: inline-block;
   text-decoration: none;
   color: navy;
@@ -485,17 +498,20 @@ section {
   transition: all var(--transition-speed) ease;
 }
 
-.card5 a:hover {
+.card5 button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.counselling-img img{
+  border-radius: 2rem;
+}
+
 /* Testimonial Section */
 .card6 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 60px auto;
+  width: 100%;
+  max-width: 1500px;
   padding: 60px;
   background-color: rgb(220, 224, 160);
   border-radius: 20px;
@@ -504,6 +520,7 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
+  height: 70vh;
 }
 
 .testimonial-left {
@@ -708,68 +725,56 @@ section {
 
 /* Partners Section */
 .card7 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 60px auto;
-  text-align: center;
-  padding: 60px;
-  background-color: var(--background-dark);
-  border-radius: 20px;
-  position: relative;
-}
-
-.card7 p {
-  font-size: 1rem;
-  color: black;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 2rem;
-}
-
-.partnerspic {
   width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1500px;
+  background-color:rgba(0, 0, 0, 0.281);
+  border-radius: 3rem;
+  position: relative;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 2rem;
+}
+
+.card7 p{
+  padding-left: 2rem;
+}
+.partners-links a{
+  display:inline;
+  flex-direction: row;
+  padding: 2.4rem;
+  text-decoration: none;
+}
+
+.partners-links a:hover{
+  text-decoration: wavy underline;
+  color: whitesmoke;
 }
 
 /* Resources Section */
 .card8 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 60px 0;
-  background-color: lightcyan;
+  width: 100%;
+  max-width: 1500px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: auto;
+  color: blue;
 }
 
-.card8 p:first-child {
-  font-size: 1rem;
-  color: var(--secondary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-}
-
-.card8 h1 {
+.card8 h1{
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
 }
 
-.card8 p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
+.card8 p{
+  font-size: 1.3rem;
 }
-
 /* Resource Cards */
 .card9 {
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
+  width: 100%;
+  max-width: 1500px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -779,27 +784,27 @@ section {
   -webkit-overflow-scrolling: touch;
 }
 
-.card9a, .card9b, .card9c, .card9d {
+.card9a, .card9b, .card9c {
   flex: 1;
   min-width: 300px;
-  max-width: 380px;
-  padding: 40px;
+  max-width: 500px;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   background-color: var(--accent-color);
   transition: transform var(--transition-speed) ease;
   position: relative;
   text-align: center;
+  height: 40vh;
+  padding: 1rem 2rem;
 }
 
-.card9a:hover, .card9b:hover, .card9c:hover, .card9d:hover {
+.card9a:hover, .card9b:hover, .card9c:hover {
   transform: translateY(-10px);
 }
 
 .card9 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  line-height: 1.3;
   color: var(--primary-color);
 }
 
@@ -809,7 +814,7 @@ section {
   line-height: 1.6;
 }
 
-.card9 a {
+.card9 button {
   display: inline-block;
   text-decoration: none;
   color: var(--text-light);
@@ -818,55 +823,39 @@ section {
   border-radius: 30px;
   font-weight: bold;
   transition: all var(--transition-speed) ease;
+  border: none;
+  width: 170px;
 }
 
-.card9 a:hover {
-  background-color: var(--secondary-color);
+.card9 button:hover {
+  background-color: var(--accent-color);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid blue;
+  color: blue;
 }
 
 /* Community Section */
 .card10,
 .card10b {
-  width: 90%;
-  max-width: 1200px;
-  height: 400px;
-  margin: 60px auto;
+  width: 100%;
+  max-width: 1500px;
+  height: 450px;
   background-color: lightcyan;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   color: darkcyan;
   text-align: center;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
+  gap: 1.5rem;
 }
 
-.card10b p:first-child {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-}
-
-.card10b h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-.card10b p {
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-  max-width: 700px;
-  line-height: 1.6;
-}
-
-.card10b a {
+.card10b button {
   text-decoration: none;
   color: var(--text-light);
   background-color: var(--primary-color);
@@ -877,7 +866,7 @@ section {
   transition: all var(--transition-speed) ease;
 }
 
-.card10 a:hover {
+.card10 button:hover {
   background-color: var(--accent-color);
   color: var(--text-dark);
   transform: translateY(-3px);
@@ -889,21 +878,18 @@ section {
   position: relative;
   z-index: 1;
   background-color: var(--background-light);
-  padding: 60px 0;
 }
 
 .card11 {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
   position: relative;
 }
 
 .card11a {
-  flex: 1;
   min-width: 300px;
   padding: 20px;
   position: relative;
@@ -911,6 +897,7 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 30%;
 }
 
 .card11a p:first-child {
@@ -943,15 +930,13 @@ section {
 }
 
 .card11b {
-  flex: 2;
   min-width: 300px;
   position: relative;
 }
 
 .faq-container {
-  width: 100%;
+  width: 1000px;
   position: relative;
-  z-index: 2;
 }
 
 details {
@@ -1332,27 +1317,6 @@ form button:hover {
     padding: 0.6rem 1.5rem;
   }
 
-  /* Services Section */
-  .card3 {
-    width: 95%;
-    padding: 40px 0;
-  }
-
-  .card3 h1 {
-    font-size: 2rem;
-  }
-
-  .card3 .p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
-  /* Products Section */
-  .card4 {
-    width: 95%;
-    gap: 20px;
-  }
-
   .card4a, .card4b {
     min-width: 100%;
     max-width: 100%;
@@ -1673,16 +1637,28 @@ form button:hover {
 
   /* Services Section */
   .card3 {
-    width: 92%;
-    padding: 30px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
+
+
+  .card3 h6 {
+    font-size: 1.8rem;
+  }
+
 
   .card3 h1 {
     font-size: 1.8rem;
   }
 
-  .card3 .p {
-    font-size: 0.9rem;
+  .card3 p {
+    font-size: 1.3rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
 
   /* Products Section */
@@ -2369,8 +2345,8 @@ summary {
     padding: 0.5rem 1rem;
   }
 }
+/* 
 
-/* General Reset and Font Setup */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -2379,7 +2355,6 @@ body {
   color: #333;
 }
 
-/* Services Intro Section */
 #services {
   padding: 60px 20px;
   background-color: #ffffff;
@@ -2410,7 +2385,7 @@ body {
   color: #555;
 }
 
-/* ===== Base Reset and Defaults ===== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -2424,13 +2399,13 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Section Container ===== */
+
 #contact-section {
     padding: 60px 20px;
     background-color: #f9fafc;
 }
 
-/* ===== Main Card Container (2 Columns) ===== */
+
 .main-card-container {
     display: flex;
     justify-content: space-between;
@@ -2440,7 +2415,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* ===== Each Card (Contact + Message) ===== */
+
 .card {
     width: 48%;
     background-color: #ffffff;
@@ -2460,7 +2435,7 @@ body {
     color: #003366;
 }
 
-/* ===== Base Reset and Defaults ===== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -2474,13 +2449,13 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Section Container ===== */
+
 #contact-section {
     padding: 60px 20px;
     background-color: #f9fafc;
 }
 
-/* ===== Main Card Container (2 Columns on Desktop, 1 on Mobile) ===== */
+
 .main-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -2490,9 +2465,9 @@ body {
     margin: 0 auto;
 }
 
-/* ===== Each Card (Contact + Message) ===== */
+
 .card {
-    flex: 0 0 calc(50% - 20px); /* Two cards with 40px gap split evenly */
+    flex: 0 0 calc(50% - 20px); 
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
@@ -2510,7 +2485,7 @@ body {
     color: #003366;
 }
 
-/* ===== Contact Card Details ===== */
+
 .contact-card p {
     margin-bottom: 12px;
     font-size: 16px;
@@ -2537,7 +2512,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ===== Send Message Form ===== */
+
 .message-card form {
     display: flex;
     flex-direction: column;
@@ -2578,7 +2553,7 @@ body {
     background-color: #00509e;
 }
 
-/* ===== Responsive Design (1 Card per Row on Mobile) ===== */
+
 @media (max-width: 768px) {
     .main-card-container {
         flex-direction: column;
@@ -2644,7 +2619,7 @@ body {
   color: #777;
 }
 
-/* Responsive Fixes */
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -2660,3 +2635,4 @@ form {
   max-width: 600px;
   margin: 0 auto;
 }
+ */
