@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>St. Dominic Foster Home organization</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/script.js"></script>
 </head>
 <body>
     <div class="utility-container">
@@ -21,12 +22,11 @@
 
             <div class="nav-right">
                 <a href="#donate">Donate</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact Details</a>
+                <a href="#faq-section">FAQ</a>
+                <a href="#contact-section">Contact Details</a>
             </div>
-                </div>
     
-            <button class="hamburger" aria-expanded="false" aria-label="Menu">
+            <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="Menu">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
@@ -37,10 +37,11 @@
                 <a href="#donate">Donate</a>
                 <a href="#about">About</a>
                 <a href="#donate">Donate</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact Details</a>
+                <a href="#faq-section">FAQ</a>
+                <a href="#contact-section">Contact Details</a>
             </div>
         </nav>
+        </div>
     </header>
 
 
@@ -63,9 +64,12 @@
                     <h1>Why Foster Care Matters</h1>
                     <p>Founded in 2009, Every child deserves a loving, stable home where they can grow, learn, 
                         and reach their full potential. Foster care provides a vital safety net for children who cannot remain with their birth 
-                        families due to circumstances beyond their control. At St. Dominic Foster Home, we are committed to creating an environment where children feel valued, protected, and empowered to build bright futures.
-                        Our comprehensive approach includes not only providing safe homes but also offering emotional support, educational assistance,
-                        and therapeutic services to help children heal from past trauma and develop the skills they need for successful adulthood..</p>
+                        families due to circumstances beyond their control. At St. Dominic Foster Home, we are committed to creating an environment where
+                         children feel valued, protected, and empowered to build bright futures.
+                        Our comprehensive approach includes not only providing safe homes but also offering emotional support, educational
+                         assistance,
+                        and therapeutic services to help children heal from past trauma and develop the skills they need for successful
+                         adulthood.</p>
                     <button>Learn More</button>
                 </div>
                 <div class="card2b">
@@ -104,18 +108,18 @@
                 </div>
             </div>
             </div>
+        </section>
             <div class="utility-container">
                 <div class="card55">
+
             <div class="card5">
                 <h1>Counseling & Therapy</h1>
                 <p>We offer individual and group counseling sessions to help children process their experiences and develop coping strategies.</p>
                 <p> Our licensed therapists specialize in trauma-informed care and work closely with each child to create a safe and supportive environment.</p>
                 <button>Get Support</button>
                 </div>
-                <div class="counselling-img">  
-                      <img src="./assets/image2.png" alt=""></img>
-                </div>
-                
+            </div>
+
             </div>
             </div>
         </section>
@@ -228,145 +232,167 @@
         </section>
         </div>
 
-<div class="utility-container">
-       <section class="faq-section">
-    <div class="card11">
-        <div class="card11a">
-            <p>NEED HELP?</p>
+         <article class="utility-container section" id="faq-section">
+        <div class="FAQSECTION">
+            <div class="FAQSECTION1">
+                  <h6>NEED HELP?</h6>
             <h1>Frequently Asked Questions</h1>
             <p>Find answers to common questions about fostering, the application process, and support services at St. Dominic Foster Care.</p>
-            <img src="./assets/Find Answers faqs.jpg" alt="Foster care support illustration">
-        </div>
-        <div class="card11b">
-            <div class="faq-container">
-                <details>
-                    <summary>What are the requirements to become a foster parent?</summary>
-                    <div class="faq-content">
-                        Foster parents must be at least 21 years old, have stable income and housing, pass background checks, complete training programs, and demonstrate the ability to provide a safe, nurturing environment. Both single individuals and couples can apply, regardless of homeownership status or income level, as long as basic needs can be met.
-                    </div>
-                </details>
-                <details>
-                    <summary>How long do children typically stay in foster care?</summary>
-                    <div class="faq-content">
-                        The length of stay varies greatly depending on individual circumstances. Some children may be in care for a few weeks while others may stay for several years. Our goal is always to work toward the best permanent solution for each child, whether that's reunification with their birth family, adoption, or aging out with strong life skills and support systems.
-                    </div>
-                </details>
-                <details>
-                    <summary>What support is provided to foster families?</summary>
-                    <div class="faq-content">
-                        We provide comprehensive support including monthly financial assistance, 24/7 crisis support, ongoing training opportunities, respite care, access to counseling services, educational advocacy, and regular case management. Our goal is to ensure foster families have all the resources they need to provide excellent care.
-                    </div>
-                </details>
-                <details>
-                    <summary>Can foster children maintain contact with their birth families?</summary>
-                    <div class="faq-content">
-                        When safe and appropriate, we strongly support maintaining connections with birth families through supervised visits, phone calls, or other forms of contact. Family reunification is often the goal when possible, and maintaining these relationships can be crucial for the child's emotional well-being and identity development.
-                    </div>
-                </details>
-                <details>
-                    <summary>What happens when foster children turn 18?</summary>
-                    <div class="faq-content">
-                        We provide transition planning and support services to help young adults aging out of foster care. This includes assistance with housing, education, employment, life skills training, and ongoing emotional support. Many of our programs continue to age 21 or beyond to ensure young adults have the foundation they need for independent living.
-                    </div>
-                </details>
+            <div class="image-containeer">
+            <img src="./assets/image.png" alt="Foster care support illustration">
             </div>
+            </div>
+            
+
+
+         <div class="FAQSECTION2">
+            
+        <div class="accordion">
+
+            <div id="content-container" class="content-container">
+                <div class="question">What are your opening hours?</div>
+                <div class="answer">We're open from 6:00AM to 10:00PM,Monday through Sunday. </div>
+            </div>
+
+            <div id="content-container" class="content-container">
+                <div class="question">What are the requirements to become a foster parent?</div>
+                <div class="answer">Foster parents must be at least 21 years old, have stable income and housing, 
+                        pass background checks, complete training programs, and demonstrate the ability to provide a safe, nurturing environment.
+                         Both single individuals and couples can apply, regardless of homeownership status or income level, as long as basic needs
+                          can be met.</div>
+            </div>
+
+            <div id="content-container" class="content-container">
+                <div class="question">How long do children typically stay in foster care?</div>
+                <div class="answer">The length of stay varies greatly depending on individual circumstances. Some children may be in care for a few weeks
+                         while others may stay for several years. Our goal is always to work toward the best permanent solution for each child,
+                          whether that's reunification with their birth family, adoption, or aging out with strong life skills and support
+                          systems.</div>
+            </div>
+
+            <div id="content-container" class="content-container">
+                <div class="question">What support is provided to foster families?</div>
+                <div class="answer">We provide comprehensive support including monthly financial assistance, 24/7 crisis support, ongoing training
+                         opportunities, respite care, access to counseling services, educational advocacy, and regular case management. Our goal is to ensure foster families have all the resources they need to provide excellent care.</div>
+            </div>
+
+            <div id="content-container" class="content-container">
+                <div class="question">Can foster children maintain contact with their birth families?</div>
+                <div class="answer">Definitely! We strongly support maintaining connections with birth families through supervised visits,
+                         phone calls, or other forms of contact. Family reunification is often the goal when possible, and maintaining these relationships can be crucial for the child's emotional well-being and identity development.</div>
+            </div>
+
+            <div id="content-container" class="content-container">
+                <div class="question">What happens when foster children turn 18?</div>
+                <div class="answer">We provide transition planning and support services to help young adults aging out of foster care. This includes assistance with housing, education, employment, life skills training, and ongoing emotional support. Many of our programs continue to age 21 or beyond to ensure young adults have the foundation they need for independent living.</div>
+            </div>
+
         </div>
+
     </div>
-</section>
-</div>
+    </div>
+    </article>
+
 <section id="get-involved">
+     <div class="utility-container">
     <div class="con">
-        <div>
+       
             <p>Get Involved</p>
             <h1>Make a Difference Today</h1>
             <p>Your support can change lives. Whether through volunteering, donating, or spreading the word, there are many ways to help foster children and families in need.</p>
         </div>
+        </div>
+
 <section id="contact-section">
+     <div class="utility-container">
     <div class="main-card-container">
+       
         
         <!-- Contact Details Card -->
-        <div class="card contact-card">
+                    <div class="card contact-card">
+                        <div class="contactt">
             <h2>Contact Details</h2>
             <p><strong>Email:</strong> info@stdominicfoster.org</p>
             <p><strong>Phone:</strong> (0)710 425 545</p>
-            <p><strong>Address:</strong> 00520 Caring Lane, Kasarani, Nairobi, Kenya<br>
+            <p><strong>Address:</strong> 00520 Caring Lane, Kasarani, Nairobi, Kenya
                 Unity Hse, 101 Annex, Next to Naivas Ruai</p>
+                </div>
             
             <div class="social-media">
-                <img src="assets/imgs/facebook-icon.png" alt="Facebook">
-                <img src="assets/imgs/instagram-icon.png" alt="Instagram">
-                <img src="assets/imgs/twitter-icon.png" alt="Twitter">
-                <img src="assets/imgs/linkedin-icon.png" alt="LinkedIn">
+               <a href="#Facebook"> <img src="assets/image3.png" alt="Facebook" width="50px" height="30px"></a>
+                <a href="#Instagram"><img src="assets/image5.png" alt="Instagram" width="50px" height="30px"></a>
+                <a href="#Twitter"><img src="assets/image4.png" alt="Twitter" width="50px" height="30px"></a>
+                <a href="#LinkedIn"><img src="assets/image6.png" alt="LinkedIn" width="50px" height="30px"></a>
             </div>
 
+            <div class="last-para">
             <p>We respond within 2 business hours</p>
+            </div>
+
         </div>
 
         <!-- Send Message Form Card -->
         <div class="card message-card">
             <h2>Send Us a Message</h2>
+            <div class="contact-message">
             <form action="/submit-contact" method="POST">
                 <label for="email">Email:</label>
                 <input id="email" name="email" type="email" required placeholder="Your email address">
-
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required placeholder="Your message"></textarea>
-
                 <button type="submit">Send Message</button>
-            </form>
+            <!-- No changes needed here for navigation functionality --> </div>
         </div>
-
-          <div class="card100">
-        <h1>Join Our Newsletter</h1>
-        <p>Stay updated on our latest news, events, and ways to support foster care.</p>
-        <form action="/subscribe" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-         </form>
-            </div>
+    </div>
     </div>
 </section>
 
 <section>
-  <footer id="footer100">
-    <div class="footer-container">
-      
-      <!-- Footer Card 1: Organization Links -->
-      <div class="footer-card footer-left">
+    <div class="utility-container">
+        <div class="footer-wrapper">
+      <div class="footer-container">
         <h2>St. Dominic's Foster Care Org</h2>
-        <nav class="footer-items">
-          <div class="footer-column">
+
+        <div class="footer-column">
+          <div class="footer-column1">
             <p><a href="#about">About</a></p>
             <p><a href="#donate">Donate</a></p>
             <p><a href="#services">Services</a></p>
             <p><a href="#faq">FAQ</a></p>
             <p><a href="#contact">Contact</a></p>
           </div>
-          <div class="footer-column">
+
+          <div class="footer-column2">
+            <p><a href="#Facebook">Facebook</a></p>
+            <p><a href="#Instagram">Instagram</a></p>
+            <p><a href="#Linkedin">Linkedin</a></p>
+            <p><a href="#Twitter">Twitter</a></p>
+            <p><a href="#WhatsApp">WhatsApp</a></p>
+            </div>
+
+          <div class="footer-column3">
             <p><a href="#terms">Terms of Use</a></p>
             <p><a href="#privacy">Privacy Policy</a></p>
             <p><a href="#careers">Careers</a></p>
             <p><a href="#volunteer">Volunteer</a></p>
             <p><a href="#events">Events</a></p>
-            
-          </div>
-        </nav>
-      </div>
+            </div>
+            </div>
 
-      <!-- Footer Card 2: Call to Action -->
-      <div class="footer-card footer-right">
-        <h2>Make a Difference in a Child's Life Today.</h2>
-        <p>Your generous donations help us provide essential resources, care, and support to children in foster care. Every contribution makes a difference.</p>
-        <a href="#donate" class="footer-donate-button">Donate Now</a>
-      </div>
- <p class="footer-note">© 2025 St. Dominic Foster Home Organization. All rights reserved.</p>
-    </div>
-  </footer>
+            <p>© 2025 St. Dominic Foster Home Organization. All rights reserved.</p>
+
+          </div>
+
+          
+      <div class="footer-card">
+        <h1>Make a Difference in a Child's Life Today.</h1>
+        <p>Your generous donations help us provide essential resources, care, and support to children in foster care. 
+            Every contribution makes a difference.</p>
+        <button id="donate">Donate Now</button>
+        </div>
+  </div>
 </section>
 
-        
 </footer>
-
-    <script src="./js/script.js"></script>
 </body>
 </html>
