@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-color: #4f71e2;
   --secondary-color: #b5f1a9;
   --accent-color: #E8DCD8;
@@ -12,7 +12,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  ;
 }
 
 html {
@@ -36,14 +36,14 @@ body {
   position: relative;
   margin-top: 2rem;
   padding: 1rem 2rem;
-  border: 2px solid red;
+  border: hidden;
 }
 section {
   scroll-margin-top: 120px;
   padding: 30px 0;
   position: relative;
   overflow-x: hidden;
-}
+  
 
 
 .navbar {
@@ -74,9 +74,8 @@ section {
 .nav-logo {
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--text-light);
+  color: blue);
   text-align: center;
-  flex: 1;
   white-space: nowrap;
 }
 
@@ -113,6 +112,7 @@ section {
  
 
 /* Hero Section */
+/* 
 .card1 {
   width: 100%;
   max-width: 1500px;
@@ -166,6 +166,270 @@ section {
 }
 
 /* About Section */
+
+/* === Base Reset and Utilities === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+header {
+  background-color: #f9f9f9;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.utility-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* === Navigation Columns === */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #006699;
+}
+
+/* === Hamburger Button === */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger-box {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: #333;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger-inner {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-inner::before {
+  content: "";
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  content: "";
+  top: 8px;
+}
+
+/* === Mobile Navigation Links === */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.nav-links a {
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.nav-links.active {
+  display: flex;
+}
+.nav-links a:hover {
+  color: #006699;
+}
+/* === Navigation Links === */
+
+.nav-links a {
+  color: #333;
+  font-size: 1rem;
+  transition: color var(--transition-speed) ease;
+}
+/* Basic Reset and Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
+}
+
+.utility-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Logo */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0077aa;
+}
+
+/* Nav Links (desktop) */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.hamburger-box {
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: #333;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+  content: "";
+}
+
+.hamburger-inner {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+/* Mobile Dropdown */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #ffffff;
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  width: 200px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* Show menu when active */
+.nav-links.active {
+  display: flex;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* === Responsive Rules === */
+@media (max-width: 768px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
 .card2 {
   width: 100%;
   height: 80vh;
@@ -211,6 +475,8 @@ width:50% ;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border: 2px solid blue;
   color: blue;
+
+
 }
 
 .card2b {
@@ -711,6 +977,37 @@ width:50% ;
   gap: 3rem;
 }
 
+@media (max-width: 767px) {
+  .FAQSECTION {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+    align-items: stretch;
+  }
+  .FAQSECTION1, .FAQSECTION2 {
+    width: auto;
+    min-width: 0;
+    padding: 0;
+  }
+  .accordion {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .image-containeer {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .image-containeer img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+}
+
 .FAQSECTION1{
     display: flex;
     flex-direction: column;
@@ -785,14 +1082,13 @@ width:50% ;
     font-weight: 400;
     list-style: 1.5;
     width: 100%;
-    height: 10px;
+    max-height: 0;
     overflow: hidden;
-    transition: .5s;
+    transition: max-height 0.5s ease, padding-top 0.5s;
+    padding-bottom: 0;
 }
 
-.accordion .content-container.active .answer{
-    height: 150px;
-}
+/* Removed duplicate: .accordion .content-container.active .answer{ height: 150px; } */
 
 .accordion .content-container.active .question{
     font-size: 18px;
@@ -1027,4 +1323,4546 @@ input, textarea{
   background-color: blue;
   color: whitesmoke;
   border: whitesmoke 2px solid;
-} 
+}  */
+
+
+
+
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+ }
+
+ .utility-container{
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    /* border: 2px solid red; */
+ }
+
+.section{
+    margin-top: 2rem;
+}
+
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3rem;
+    color: #8b3a00;
+    font-size: 1rem;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+    color:blue;
+    gap: 5rem;
+    padding-left: 1.5rem;
+    text-decoration: none;
+}
+
+.menu-button{
+    display: flex;
+}
+
+
+.nav-limks a{
+    display: none;
+}
+.icon{
+    display: flex;
+    font-size: 3rem;
+    margin-left: auto;
+}
+
+.sidebar{
+    display: none;
+}
+
+
+nav ul{
+    width:var(--container-width);
+    max-width: var(--container-max-with);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0 ;
+    margin: 0;
+    flex-wrap: wrap;
+    margin-left: var(--container-margin-left);
+    color: var(--bigger-heading);
+}
+
+nav, a{
+    height: 50px;
+    font-size: 25px;
+    color: blue;
+    
+}
+
+ .nav-links a{
+    color: blue;
+}
+
+ nav a:hover{
+    color:rgb(241, 182, 87);
+}
+
+nav li:nth-child(3){
+    margin-right: auto;
+}
+
+
+nav li:nth-child(4){
+    margin-left: auto;
+    margin-right: auto;
+    font-size: var(--bigger-heading);
+}
+
+nav li:nth-child(5){
+    margin-left: auto;
+}
+
+#center a{
+    font-size: 50px;
+}
+
+
+.text-overlay{
+    padding-right: auto;
+    padding-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    gap: .5rem;
+    background-image: url(../assets/happy\ kid.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vh;
+    border-radius: 2rem;
+    
+}
+
+.text-overlay h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.text-overlay p{
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.text-overlay button{
+    font-size: 1rem;
+    background-color:blue;
+    border-radius: 15px;
+    color:whitesmoke;
+    cursor: pointer;
+     margin-right: auto;
+     margin-left: auto;
+     padding: .5rem;
+     border: none;
+
+}
+
+.text-overlay button:hover {
+    background-color:  whitesmoke;
+    border: 3px solid  blue;
+    color:  blue;
+}
+
+
+.text-overlay {
+    white-space: normal;
+    animation: text-overlay 2s steps(20, end), cursor .2s steps(12, end) infinite;
+}
+@keyframes text-overlay {
+    from { width: 0 }
+}
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+
+.Services{
+    display: flex;
+    flex-wrap: wrap;
+}
+.quater{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    color:  blue;
+    gap: 1rem;
+}
+.quater h2{
+    font-size: 1.5rem;
+}
+.quater h6{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.quater p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+.quater button{
+    font-size: 1rem;
+    background-color:papayawhip;
+    border-radius: 15px;
+    color: #8b3a00;
+    cursor: pointer;
+    padding: 0.5rem .5rem;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+}
+
+.quater  button:hover {
+    background-color:  #8b3a00;
+    border: 3px solid  papayawhip;
+    color:  papayawhip;
+
+}
+
+
+.service-image {
+    border-radius: 20px;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: blue;
+}
+
+.menu h6{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.menu h1{
+    font-size: 1.5rem;
+}
+
+.menu p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+.menu1{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.menu-item1{
+  background-color: blue;
+  border-radius: 2rem;
+  color: whitesmoke;
+   }
+
+
+.menu-text1{
+    color:whitesmoke;
+    gap: 3rem;
+    border-radius:2rem;
+    padding: 1rem;
+}
+
+.menu-text1 h1{
+    font-size: 1.5rem;
+    
+}
+
+.menu-text1 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+
+}
+.menu-text1 button{
+    font-size: 1rem;
+    background-color:whitesmoke;
+    border-radius: 15px;
+    color: blue;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 0.5rem .5rem;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+    width: 200px;
+}
+
+.menu-text1  button:hover {
+    background-color:  blue;
+    border: 3px solid whitesmoke;
+    color:whitesmoke;
+
+}
+
+
+
+.menu-item2{
+  background-color: whitesmoke;
+  color: blue;
+  border-radius: 2rem;
+   }
+
+.menu-text2{
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: .5rem;
+}
+
+.menu-text2 h1{
+    font-size: 1.5rem;
+    
+}
+
+.menu-text2 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+
+}
+.menu-text2 button{
+    font-size: 1rem;
+    background-color:blue;
+    border-radius: 15px;
+    color: whitesmoke;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 0.5rem .5rem;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+}
+
+.menu-text2  button:hover {
+    background-color:  whitesmoke;
+    border: 3px solid  blue;
+    color:blue;
+
+}
+
+.menu-item3{
+    background-image: url(../assets/image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: auto;
+    border-radius: 2rem;
+}
+
+.menu-text3{
+  color:whitesmoke;
+  gap: 3rem;
+  border-radius:2rem;
+  padding: 1rem;
+}
+
+/* Fix community container height */
+.community {
+  height: auto;
+  min-height: 0;
+}
+
+.menu-text3 h1{
+    font-size: 1.5rem;
+    
+}
+
+.menu-text3 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+
+}
+
+.menu-text3 button{
+    font-size: 1rem;
+    background-color:whitesmoke;
+    border-radius: 15px;
+    color: blue;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 0.5rem .5rem;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+}
+
+.menu-text3  button:hover {
+    background-color:  blue;
+    border: 3px solid  whitesmoke;
+    color:  whitesmoke;
+}
+
+.testimonials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color:   blue;
+}
+
+.testimonials h6{
+    font-size: 1rem;
+}
+
+.testimonials h1{
+    font-size: 1.5rem;
+}
+
+.testimonials p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.carousel-btn {
+    display: none;
+}
+
+
+.card {
+  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 2rem;
+  gap: 1rem;
+  margin: 1rem 0;
+  color:  whitesmoke;
+
+}
+
+.card p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+
+}
+
+.card span{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.partners{
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.partners a{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: .5rem;
+    text-decoration: none;
+    font-weight: 400;
+    gap: 1rem;
+}
+
+.partners a{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.partners a:hover{
+    background-color: bisque;
+}
+
+.explore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    color: blue;
+}
+
+.explore h6{
+    font-size: 1rem;
+}
+
+.explore h1{
+    font-size: 1.5rem;
+}
+
+.explore p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+.explore-container1{
+    background-color: blue;
+    color:whitesmoke;
+    border-radius: 2rem;
+    padding:  0.5rem;
+    margin-bottom: 1rem;
+}
+
+.explore-container1 h1{
+    font-size: 1.5rem;
+}
+
+.explore-container1 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.explore-container1 button{
+    font-size: 1rem;
+    background-color:whitesmoke;
+    border-radius: 15px;
+    color: blue;
+    cursor: pointer;
+    padding: 0.5rem .5rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+
+}
+
+.explore-container1  button:hover {
+    background-color:  blue;
+    border: 3px solid  whitesmoke;
+    color:  whitesmoke;
+}
+
+.explore-container2{
+    background-color: whitesmoke;
+    color: blue;
+    border-radius: 2rem;
+    padding:  0.5rem;
+    margin-bottom: 1rem;
+}
+
+.explore-container2 h1{
+    font-size: 1.5rem;
+}
+
+.explore-container2 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.explore-container2 button{
+    font-size: 1rem;
+    background-color:blue;
+    border-radius: 15px;
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 0.5rem .5rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin: .5rem;
+    border: none;
+}
+
+.explore-container2  button:hover {
+    background-color:whitesmoke;
+    border: 3px solid  blue;
+    color: blue;
+}
+
+.explore-container3{
+    background-color: blue;
+    color: whitesmoke;
+    border-radius: 2rem;
+    padding:  0.5rem;
+}
+
+.explore-container3 h1{
+    font-size: 1.5rem;
+}
+
+.explore-container3 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.explore-container3 button{
+    font-size: 1rem;
+    background-color:whitesmoke;
+    border-radius: 15px;
+    color: blue;
+    cursor: pointer;
+    padding: 0.5rem .5rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+}
+
+.explore-container3  button:hover {
+    background-color:  blue;
+    border: 3px solid  whitesmoke;
+    color:  whitesmoke;
+}
+
+
+
+.community-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: blue;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.community-description h6{
+   font-size: 1rem;
+   font-weight: 600;
+}
+
+.community-description h1{
+   font-size: 1.5rem;
+}
+
+.community-description p{
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1.6;
+}
+
+
+.community-description button{
+    font-size: 1rem;
+    background-color:blue;
+    border-radius: 15px;
+    color: whitesmoke;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 0.5rem .5rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+}
+
+.community-description button:hover {
+    background-color:  whitesmoke;
+    border: 3px solid  blue;
+    color:  blue;
+}
+
+.community-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+}
+
+
+.FAQSECTION1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color:blue;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: auto;
+}
+
+.FAQSECTION1 h6{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.FAQSECTION1 h1{
+    font-size: 1.5rem;
+}
+
+.FAQSECTION1 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.image-containeer{
+    width: 300px;
+    height: 400px;
+}
+.image-containeer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+/* The red box around sections is defined by this line in your .utility-container rule: */
+/* border: white; */
+
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1rem;
+    color: #8b3a00;
+}
+
+.accordion .content-container .question{
+    padding: 18px 0px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    font-weight: 400;
+}
+
+.accordion .content-container .question::after{
+     content: '+';
+     position: absolute;
+     right: -5px;
+     font-size: 1.5rem;
+     font-weight: 700;
+}
+
+.accordion .content-container .answer{
+    padding-top: 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    list-style: 1.5;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding-bottom 0.5s;
+    padding-bottom: 0;
+}
+.accordion .content-container.active .answer{
+    max-height: 300px;
+    padding-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .message {
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+    padding: 0;
+  }
+  .message1 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+  }
+  form {
+    width: 100%;
+    padding: 0;
+    gap: 1rem;
+  }
+  input, textarea {
+    width: 100%;
+    min-width: 0;
+    font-size: 1rem;
+  }
+  form button {
+    width: 100%;
+    min-width: 0;
+    font-size: 1rem;
+  }
+}
+
+.accordion .content-container.active .question{
+    font-size: 18px;
+    transition: .5s;
+}
+
+.accordion .content-container.active .question::after{
+    content: '-';
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: .5s;
+}
+
+#content-container{
+    background-color:  papayawhip;
+    padding: 0px 30px;
+    border-radius: 20px;
+    color: var(--color);
+}
+
+
+.get-in-touch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: blue;
+}
+
+.get-in-touch h6{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.get-in-touch h1{
+    font-size: 1.5rem;
+}
+
+.get-in-touch p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.contact{
+    background-color: papayawhip;
+    border-radius: 2rem;
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    position: relative;
+    color: #8b3a00;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+.contact-details1  p{
+    font-size: 1rem;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+
+
+
+.contact-details2 ol li a {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #8b3a00;
+    
+}
+
+
+a:hover{
+    color: rgb(247, 154, 5);
+}
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message h1{
+    color:#8b3a00;
+    font-size: 1.5rem;
+}
+.message1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:#8b3a00;
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+    color:  papayawhip;
+}
+
+ form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+ }
+
+ label{
+    font-family: sans-serif;
+    font-weight: 400;
+    color: papayawhip;
+    font-size: 1rem;
+ }
+
+ input, textarea{
+    width: 300px;
+    border: none;
+    border-bottom: 0.2rem solid papayawhip;
+    background-color: transparent;
+    color: papayawhip;
+    font-size: 1rem; 
+    outline: none;
+ }
+
+ ::placeholder{
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: papayawhip;
+ }
+
+ form button{
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    background-color: papayawhip;
+    color:#8b3a00;
+    padding: .5rem 1rem;
+ }
+
+ 
+.the-end{
+    display: flex;
+    flex-direction: column;
+}
+
+.bitestreet1 {
+    background-color: #8b3a00;
+    color: papayawhip;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+}
+
+.bitestreet1 h1{
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.bitestreet1 a{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: papayawhip;
+
+}
+
+
+.link1{
+    padding: 0 1.5rem;
+     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+.link2{
+       padding: 0 1rem;
+     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1rem;  
+}
+
+.link3{
+       padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+.bitestreet1 p{
+    padding-top: 3rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    
+}
+
+.bitestreet2{
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    background-color: papayawhip;
+    gap: 1rem;
+    color: #8b3a00;
+    margin-top: 3rem;
+    padding: 1rem 3rem;
+    background-image: url(../assets/image7.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bitestreet2 h1{
+    font-size: 1.2rem;
+}
+
+.bitestreet2 p{
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+    
+ .menu-button{
+    padding-top: 2rem;
+}
+
+@media (min-width:320px){
+
+     .utility-container{
+        max-width: 320px;
+    }
+
+    .section{
+        margin-top: 0rem;
+    }
+    
+    .menu-button{
+        padding-top: 2rem;
+    }
+
+
+    
+.text-overlay{
+    min-height:50vh; 
+}
+
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+     width: 280px;
+    height: auto;
+    gap: .5rem;
+}
+.text-overlay h1{
+    font-size: 1.3rem;
+}
+
+.text-overlay p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.text-overlay button{
+    font-size: 1rem;
+    font-weight: 400;
+   } 
+
+   
+.menu p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+
+.menu1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.menu-item1{
+    padding-left: 2.5rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+.menu-item1 h1{
+    padding-bottom: 1rem;
+}
+.menu-item2{
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+
+.menu-item2 h1{
+    padding-top: 0rem;
+}
+
+.menu-item2 p{
+    padding-right: 3.8rem;
+    padding-left: .5rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+.menu-item3 h1{
+    padding-bottom: 0rem;
+}
+
+.partners{
+    border: 2px solid #8b3a00;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: papayawhip;
+    border-radius: 2rem;
+}
+
+.partners p{
+    font-size: 1rem;
+}
+
+.our-partners a{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:
+    flex-start;
+    justify-content: flex-start;
+    font-size: 1rem;
+    padding-top: 1rem;
+    color: #8b3a00;
+}
+
+
+.contact{
+    padding: 1rem;
+    display: flex;
+    background-color: whitesmoke;
+}
+
+
+.contact-details{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: blue;
+    padding-left: 0;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.2rem;
+}
+
+.contact-details1  p{
+    font-size: 1rem;
+}
+
+
+.contact-details2 a {
+    position:relative;
+    display: inline-block;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+.contact-details2 a:hover{
+    text-decoration:whitesmoke;
+}
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message h1{
+    color:blue;
+    font-size: 1.5rem;
+}
+.message1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:blue;
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+    color:  whitesmoke;
+}
+
+ form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+ }
+
+ label{
+    font-family: sans-serif;
+    font-weight: 400;
+    color: whitesmoke;
+    font-size: 1rem;
+ }
+
+ input, textarea{
+    width: 230px;
+    border: none;
+    border-bottom: 0.2rem solid whitesmoke;
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: 1rem; 
+    outline: none;
+ }
+
+ ::placeholder{
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: rgba(255, 239, 213, 0.582);
+ }
+
+ form button{
+    font-size: 1rem;
+    width: 230px;
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    color:blue;
+    padding: .5rem 1rem;
+    border: none;
+ }
+
+ form button:hover{
+    border: 2px solid whitesmoke;
+    background-color: blue;
+    color: whitesmoke;
+ }
+ 
+.the-end{
+    display: flex;
+    flex-direction: column;
+}
+
+.bitestreet1 {
+    background-color: #8b3a00;
+    color: papayawhip;
+    border-radius: 2rem;
+    
+}
+
+.bitestreet1 h1{
+    padding-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+.bitestreet1 a{
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 .5rem;
+    gap: 1rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: papayawhip;
+    text-decoration: none;
+}
+
+.links-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.links1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.links2 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.links3 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.bitestreet1 p{
+    font-size: 1rem;
+    color: rgba(255, 239, 213, 0.432);
+}
+
+
+.bitestreet2{
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    background-color: papayawhip;
+    color: #8b3a00;
+    background-image: url(../assets/image7.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bitestreet2 p{
+    font-size: 1rem;
+    font-weight: 700;
+    padding-right: 8rem;
+}
+
+.bitestreet2 button{
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: papayawhip;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    color: #8b3a00;
+}
+
+.bitestreet2 button:hover{
+    border: 2px solid papayawhip;
+    background-color: #8b3a00;
+    color: papayawhip;
+}
+
+
+
+
+}
+ @media(min-width: 400px){
+    .utility-container{
+
+        max-width: 400px;
+        
+
+    }
+
+    .section{
+        margin-top: 1rem;
+    }
+    
+    .menu-button{
+        padding-top: 2rem;
+    }
+
+    
+
+.text-overlay{
+    min-width: 380px;
+    min-height:50vh;
+    
+}
+
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: auto;
+    gap: .5rem;
+}
+.text-overlay h1{
+    font-size: 1.3rem;
+}
+
+.text-overlay p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.text-overlay button{
+    font-size: 1rem;
+    font-weight: 400;
+   } 
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: blue;
+   }
+
+.menu h6{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.menu h1{
+    font-size: 1.5rem;
+}
+
+.menu p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.menu1{
+     width: 380px;
+
+}
+
+.menu-item1{
+    padding-left: 2.5rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+.menu-item1 h1{
+    padding-bottom: 1rem;
+}
+.menu-item2{
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+
+.menu-item2 h1{
+    padding-left: 2rem;
+}
+
+.menu-item2 p{
+    padding-right: 5.8rem;
+    padding-left: 1.5rem;
+}
+
+.menu-item2 button{
+    margin-left: 1.5rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+.menu-item3 h1{
+    padding-bottom: 0rem;
+}
+
+
+.contact{
+    padding: 1rem;
+}
+
+
+
+.contact-details{
+    padding-left: 0;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.2rem;
+}
+
+.contact-details1  p{
+    font-size: 1rem;
+}
+
+
+.contact-details2 a {
+    position:relative;
+    display: inline-block;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.message h1{
+    color:#8b3a00;
+    font-size: 1.5rem;
+}
+.message1{
+    display: flex;
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+}
+
+ form{
+    gap: 1rem;
+
+ }
+
+ label{
+    font-size: 1rem;
+ }
+
+ input, textarea{
+    width: 300px;
+    font-size: 1rem; 
+ }
+
+ ::placeholder{
+    font-size: 1rem;
+ }
+
+ form button{
+    font-size: 1rem;
+    width: 300px;
+ }
+
+ 
+.links-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.links1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.links2 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.links3 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.bitestreet1 p{
+    font-size: 1rem;
+}
+
+
+
+.bitestreet2 p{
+    font-size: 1rem;
+    padding-right: 14rem;
+}
+
+.bitestreet2 button{
+    font-size: 1rem;
+    padding: .5rem 1rem;
+}
+
+
+
+.image-containeer{
+    width: 30px;
+    height: 400px;
+    padding-left: 5rem;
+}
+.image-containeer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+
+ }
+ @media(min-width: 475px){
+    .utility-container{
+
+        max-width: 475px;
+        
+
+    }
+    
+    .section{
+        margin-top: 1rem;
+    }
+    
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: auto;
+    gap: .5rem;
+}
+
+
+.menu1{
+     width: 460px;
+
+}
+
+.menu-item1{
+    padding-left: 2.5rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.menu-item1 h1{
+    padding-left: 1rem;
+}
+
+.menu-item1 p{
+    padding-right: 4rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.menu-item1 button{
+    margin-left: 1rem;
+}
+.menu-item2{
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+
+.menu-item2 h1{
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+}
+
+.menu-item2 p{
+    padding-right: 8rem;
+    padding-left: 4rem;
+}
+
+.menu-item2 button{
+    margin-left: 3.5rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.menu-item3 h1{
+    padding-bottom: 1rem;
+}
+
+.menu-item3 p{
+    padding-right: 6rem;
+}
+
+.contact-details{
+    padding-left: 0;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.2rem;
+}
+
+.contact-details1  p{
+    font-size: 1rem;
+}
+
+
+.contact-details2 a {
+    position:relative;
+    display: inline-block;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.message h1{
+    color:#8b3a00;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+.message1{
+    display: flex;
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+}
+
+ form{
+    gap: 1rem;
+
+ }
+
+ label{
+    font-size: 1rem;
+ }
+
+ input, textarea{
+    width: 380px;
+    font-size: 1rem; 
+ }
+
+ ::placeholder{
+    font-size: 1rem;
+ }
+
+ form button{
+    font-size: 1rem;
+    width: 380px;
+ }
+  
+.links-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.links1 a{
+    font-size: 1.1rem;
+}
+
+.links2 a{
+    font-size: 1.1rem;
+}
+
+.links3 a{
+    font-size: 1.1rem;
+}
+
+.bitestreet1 p{
+    font-size: 1.1rem;
+}
+
+
+
+.bitestreet2 p{
+    font-size: 1.1rem;
+    padding-right: 28rem;
+}
+
+.bitestreet2 button{
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+}
+
+
+
+
+
+.image-containeer{
+    width: 430px;
+    height: 400px;
+}
+.image-containeer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+}
+
+ @media(min-width: 640px){
+    .utility-container{
+        max-width: 640px;
+    }
+ 
+    .section{
+        margin-top: 1rem;
+    }
+ 
+.text-overlay{
+    min-width: 600px;
+    min-height:60vh;
+    
+}
+
+.text-overlay h1{
+    font-size: 2rem;
+}
+
+ 
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: auto;
+    gap: .5rem;
+}
+.text-overlay p{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.text-overlay button{
+    font-size: 1rem;
+    font-weight: 600;
+   }
+
+   
+.Services{
+   display: flex;
+   gap: 1.7rem;
+}
+
+.quater{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 45%;
+    color:  blue;
+    gap: 1rem;
+}
+
+.quater h2{
+    font-size: 1.7rem;
+}
+
+.quater h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-right: 9.5rem;
+}
+
+.quater p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.quater button{
+    font-size: 1.2rem;
+    font-weight: 400;
+    background-color:blue;
+    border-radius: 15px;
+    color:whitesmoke;
+    cursor: pointer;
+    padding: 0.5rem .5rem;
+    height: auto;
+    margin-right:9rem;
+    border: none;
+    justify-content: flex-start;
+}
+
+.quater  button:hover {
+    background-color:  whitesmoke;
+    border: 3px solid  blue;
+    color:  blue;
+
+}
+
+
+.service-image {
+    
+    width: 50%;
+}
+
+.service-image img{
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    
+}
+
+
+.menu h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu h1{
+    font-size: 1.5rem;
+}
+
+.menu p{
+    font-size: 1.2rem;
+    font-size: 400;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.menu1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.menu-text1{
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 5rem;
+
+}
+
+.menu-text1 h1{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+
+.menu-text1 p{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+
+}
+.menu-text1 button{
+    font-size: 1.1rem;
+    margin-left: -.1rem;
+}
+
+.menu-text2{
+    width: 100%;
+}
+
+.menu-text2 h1{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    
+}
+
+.menu-text2 p{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+
+}
+.menu-text2 button{
+    font-size: 1rem;
+    margin-left: -.1rem;
+   
+}
+
+
+.menu-text3{
+    gap: 2rem;
+    border-radius:2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+
+.menu1{
+     width: 620px;
+
+}
+
+.menu-item1{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+.menu-item1 h1{
+    padding-left: 0rem;
+    padding-top: 2rem;
+}
+
+.menu-item1 p{
+    padding-right: 0rem;
+    padding-left: .2rem;
+    padding-bottom: .2rem;
+    font-size: 1.2rem;
+}
+
+.menu-item1 button{
+    margin-left: .2rem;
+    font-size: 1.2rem;
+}
+.menu-item2{
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+.menu-item2 h1{
+    padding-left: .5rem;
+    padding-bottom: 0rem;
+}
+
+.menu-item2 p{
+    padding-top: 1.5rem;
+    padding-right: 4.5rem;
+    padding-left: 0rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-item2 button{
+    margin-left: .5rem;
+    font-size: 1.2rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.menu-item3 h1{
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.menu-item3 p{
+    padding-right: 0rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-item3 button{
+    padding:auto;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.testimonials-section{
+    display: flex;
+    flex-direction: row;
+    width: 620px;
+    gap: 2rem;
+}
+.testimonials{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    width: 40%;
+   }
+
+.testimonials h6{
+    padding-top: 3rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.testimonials h1{
+    font-size: 1.5rem;
+}
+
+.testimonials p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+.carousel-container {
+    width: 60%;
+    overflow-x: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.4s ease;
+  scroll-behavior: smooth;
+  overflow-x:hidden;
+  scrollbar-width: none; 
+  max-width: 1500px;
+  gap: 1rem;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 200px;
+    height: 60vh;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.card p{
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.card span{
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+.carousel-btn {
+    display: inline;
+    flex-direction: row;
+}
+
+.testimonials button{
+    display: inline-block;
+    gap: 1rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+
+.carousel-btn.left {
+    background-color: blue;
+    border: none;
+    color: whitesmoke;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.carousel-btn.right {
+    background-color:rgba(0, 0, 255, 0.377);
+    border: none;
+    color: blue;
+}
+
+
+
+
+   
+.partners{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    height: 100px;
+    border: none;
+}
+
+.partners p{
+    font-size: 1rem;
+    padding-bottom: .5rem;
+}
+.our-partners{
+    margin-left: .5rem;
+    background-color: whitesmoke;
+}
+
+.our-partners a{
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+    align-items: center;
+    padding: .5rem;
+    color: blue;
+}
+
+.explore{
+    color: blue;
+}
+
+.explore h6{
+    font-size: 1rem;
+}
+
+.explore h1{
+    font-size: 1.5rem;
+}
+
+.explore p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0 2rem;
+}
+
+.explore-containers{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.explore-container1{
+    border-radius: 2rem;
+    padding:  0.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.explore-container1 h1{
+    font-size: 1.5rem;
+}
+
+.explore-container1 p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.explore-container1 button{
+    font-size: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 0.5rem .5rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0.5rem;
+    border: none;
+        
+}
+
+.explore-container2{
+    border-radius: 2rem;
+    padding:  0.5rem;
+    margin-bottom: 0rem;
+}
+
+.explore-container2 h1{
+    font-size: 1.5rem;
+}
+ }
+
+ @media(min-width: 768px){
+    .utility-container{
+
+        max-width: 768px;
+    }
+
+    
+    .section{
+        margin-top: 1rem;
+    }
+
+
+    
+.text-overlay{
+    min-width: 600px;
+    min-height:60vh;
+    
+}
+
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: auto;
+    gap: .5rem;
+}
+.text-overlay h1{
+    font-size: 2.3rem;
+}
+
+.text-overlay p{
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.text-overlay button{
+    font-size: 1.2rem;
+    font-weight: 400;
+   } 
+
+   
+.quater button{
+    margin-right:11rem;
+}
+
+.quater h6{
+    padding-right: 13rem;
+}
+
+.quater h2{
+    padding-right: 7rem;
+}
+
+.quater button{
+    margin-right: 13rem;
+}
+
+.Services{
+   display: flex;
+   gap: 2.2rem;
+}
+
+
+.menu h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu h1{
+    font-size: 2rem;
+}
+
+.menu p{
+    font-size: 1.2rem;
+    font-size: 400;
+    padding-left: 12rem;
+    padding-right: 12rem;
+}
+
+
+.menu1{
+    gap: 2rem;
+    width: 740px;
+   }
+
+
+
+.menu-text1 h1{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    
+}
+
+.menu-text1 p{
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+
+}
+.menu-text1 button{
+    font-size: 1.1rem;
+}
+
+
+.menu-text2 h1{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    
+}
+
+.menu-text2 p{
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+
+}
+.menu-text2 button{
+    font-size: 1rem;
+}
+
+
+.menu-text3{
+    gap: 2rem;
+    border-radius:2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.menu-text3 h1{
+    font-size: 1.5rem;
+    
+}
+
+.menu-text3 p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+
+}
+
+.menu-text3 button{
+    font-size: 1.2rem;
+    font-weight: 400;
+ }
+
+ 
+.menu1{
+     width: 750px;
+
+}
+
+.menu-item1{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+.menu-item1 h1{
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.menu-item1 p{
+    padding-right: 0rem;
+    padding-left: 1rem;
+    padding-bottom: .2rem;
+    font-size: 1.2rem;
+}
+
+.menu-item1 button{
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+.menu-item2{
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+.menu-item2 h1{
+    padding-left: .5rem;
+    padding-bottom: 0rem;
+}
+
+.menu-item2 p{
+    padding-top: 1.5rem;
+    padding-right: 5.5rem;
+    padding-left: 0rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-item2 button{
+    margin-left: .5rem;
+    font-size: 1.2rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.menu-item3 h1{
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.menu-item3 p{
+    padding-right: 0rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-item3 button{
+    padding:auto;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.testimonials-section{
+    width: 750px;
+    gap: 2rem;
+}
+.testimonials{
+    gap: 1rem;
+    width: 40%;
+   }
+
+.testimonials h6{
+    padding-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.testimonials h1{
+    font-size: 1.5rem;
+}
+
+.testimonials p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+
+.carousel-container {
+    width: 60%;
+    overflow-x: hidden;
+}
+
+.carousel-track {
+  gap: 2.5rem;
+}
+
+
+.card p{
+    font-size: 1.2rem
+    
+}
+
+.card span{
+    font-size: 1.2rem;
+}
+
+
+
+
+
+.partners{
+    padding: 1rem;
+    height: 100px;
+}
+
+.partners p{
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    color: blue;
+}
+.our-partners{
+    margin-left: .5rem;
+}
+
+.our-partners a{
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-weight: 400;
+}
+
+
+.explore h6{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.explore h1{
+    font-size: 1.6rem;
+}
+
+.explore p{
+    font-size: 1.1rem;
+    padding: 0 6rem;
+}
+
+.explore-containers{
+    gap: 1rem;
+}
+
+.explore-container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:  0 1rem;
+    padding-top: 1rem;
+}
+
+.explore-container1 h1{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+}
+
+.explore-container1 p{
+    font-size: 1.1rem;
+    padding-bottom: 1.1rem;
+}
+
+.explore-container1 button{
+    padding: 0.5rem .5rem;
+    width: 100px;
+    border: none;
+    font-size: 1.1rem;
+    width: 200px;
+}
+
+.explore-container2{
+    padding:  0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+    padding-top: 2rem;
+
+}
+
+.explore-container2 h1{
+    font-size: 1.5rem;
+}
+
+.explore-container2 p{
+    font-size: 1.1rem;
+    
+}
+
+.explore-container2 button{
+    width: 100px;
+    border: none;
+    font-size: 1.1rem;
+        width: 200px;
+}
+
+.explore-container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.explore-container3 h1{
+    font-size: 1.5rem;
+
+}
+
+.explore-container3 p{
+    font-size: 1.1rem;
+}
+
+.explore-container3 button{
+    font-size: 1.1rem;
+    width: 100px;
+    border: none;
+        width: 200px;
+}
+
+.community{
+    display: flex;
+    flex-direction: row;
+    width: 750px;
+    gap: 1rem;
+}
+
+.community-description{
+    gap: 1rem;
+}
+
+.community-description h6{
+   font-size: 1.2rem;
+}
+
+.community-description h1{
+   font-size: 1.7rem;
+}
+
+.community-description p{
+   font-size: 1.2rem;
+}
+
+
+.community-description button{
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    padding: .5rem 1rem;
+    margin-left: -.2rem;
+}
+
+.community-image {
+    width: 50%;
+}
+
+.community-image img{
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 60%;
+}
+
+
+.FAQSECTION{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.FAQSECTION1{
+  width: 50%;
+}
+
+.FAQSECTION2{
+  width: 50%;
+
+}
+
+.FAQSECTION1 h6{
+    font-size: 1.2rem;
+}
+
+.FAQSECTION1 h1{
+    font-size: 1.5rem;
+}
+
+.FAQSECTION1 p{
+    font-size: 1.2rem;
+}
+
+.FAQSECTION2{
+    width: 50%;
+}
+
+.accordion{
+    gap: 1rem;
+}
+
+
+.accordion .content-container .question{
+    font-size: 1.2rem;
+   
+}
+
+.accordion .content-container .question::after{
+     font-size: 1.5rem;
+}
+
+.accordion .content-container .answer{
+    font-size: 1.2rem;
+}
+/* Removed: .accordion .content-container.active .answer{ height: 150px; } */
+}
+
+.accordion .content-container.active .question{
+    font-size: 1rem;
+}
+
+.accordion .content-container.active .question::after{
+    font-size: 1.5rem;
+}
+
+#content-container{
+    color:blue;
+}
+
+
+.get-in-touch h6{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.get-in-touch h1{
+    font-size: 1.6rem;
+}
+
+.get-in-touch p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+
+.contact{
+    padding: 2rem;
+}
+
+.contact-details{
+    padding-left: 0;
+    width: 50%;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.2rem;
+}
+
+.contact-details1  p{
+    font-size: 1.2rem;
+}
+
+
+.contact-details2 a {
+    position:relative;
+    display: inline-block;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1.2rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 1rem;
+    gap: 1rem;
+    width: 50%;
+}
+
+.message h1{
+    color:#8b3a00;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+.message1{
+    display: flex;
+    font-size: 1.2rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+
+}
+
+ form{
+    gap: 1rem;
+
+ }
+
+ label{
+    font-size: 1.2rem;
+ }
+
+ input, textarea{
+    width: 300px;
+    font-size: 1.2rem; 
+ }
+
+ ::placeholder{
+    font-size: 1.2rem;
+ }
+
+ form button{
+    font-size: 1.2rem;
+    width: 300px;
+ }
+
+  .the-end{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+ }
+.bitestreet1{
+    width: 50%;
+}
+
+.bitestreet2{
+    width: 50%;
+}
+ 
+.links1 a{
+    font-size: 1.1rem;
+}
+
+.links2 a{
+    font-size: 1.1rem;
+}
+
+.links3 a{
+    font-size: 1.1rem;
+}
+
+.bitestreet1 p{
+    font-size: 1.2rem;
+}
+
+
+
+.bitestreet2 p{
+    font-size: 2rem;
+    padding-right: 10rem;
+}
+
+.bitestreet2 button{
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    margin-top: 3rem;
+    border-radius: 2rem;
+}
+
+
+ .bitestreet1{
+    margin-top: 3rem;
+ }
+
+ .the-end{
+    gap: 2rem;
+ }
+
+
+.image-containeer{
+    width: 330px;
+    height: 350px;
+}
+.image-containeer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+
+}
+
+@media(min-width: 1024px){
+    .utility-container{
+
+        max-width:1024px;
+    }
+    
+
+ 
+    .menu-button{
+        display: none;
+    }
+
+    .section{
+        margin-top: 2rem;
+    }
+    
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+nav a{
+    height:50px;
+    font-size: 1.5rem;
+    color:blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 ;
+    
+}
+
+.nav-left, .nav-center, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-left, .nav-right {
+  flex: 1;
+}
+
+.nav-left {
+  justify-content: flex-start;
+  padding-right: 3.2rem;
+}
+
+.nav-right {
+  justify-content: flex-end;
+  padding-left: 3.1rem;
+}
+
+.nav-links a {
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+
+ .nav-links a{
+    color: blue;
+    margin: 0;
+}
+
+ nav a:hover{
+    color:rgb(241, 182, 87);
+}
+    
+.text-overlay{
+    min-width: 600px;
+    min-height:70vh;
+    
+}
+
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: auto;
+    gap: .5rem;
+}
+.text-overlay h1{
+    font-size: 2.5rem;
+}
+
+.text-overlay p{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.text-overlay button{
+    font-size: 1.3rem;
+    font-weight: 400;
+   } 
+
+   
+   
+.quater h2{
+    font-size: 2rem;
+    padding-right: 15rem;
+}
+
+.quater h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-right: 20rem;
+}
+
+.quater p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.quater button{
+    margin-right:13rem;
+    font-size: 1.3rem;
+}
+
+
+.Services{
+   display: flex;
+   gap: 1rem;
+}
+
+
+.menu p{
+    font-size: 1.2rem;
+    font-size: 400;
+    padding-left: 12rem;
+    padding-right: 12rem;
+}
+
+
+.menu1{
+    gap: 2rem;
+    width: 1000px;
+   }
+
+
+.menu-text1{
+    height: 60vh;
+}
+.menu-text1 h1{
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+    
+}
+
+.menu-text1 p{
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+
+}
+.menu-text1 button{
+    font-size: 1.3rem;
+}
+
+.menu-text2{
+    height: 60vh;
+}
+.menu-text2 h1{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    
+}
+
+.menu-text2 p{
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+
+}
+.menu-text2 button{
+    font-size: 1.3rem;
+   
+}
+
+
+.menu-text3{
+    gap: 2rem;
+    padding: 1.5rem;
+    width: 600px;
+}
+
+.menu-text3 h1{
+    font-size: 1.5rem;
+    
+}
+
+.menu-text3 p{
+    font-size: 1.3rem;
+
+}
+
+.menu-text3 button{
+    font-size: 1.3rem;
+ }
+
+ 
+.menu1{
+     width: 1000px;
+}
+
+.menu-item1{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    gap: 1rem;
+    width: 100%;
+    height: 70vh;
+}
+
+.menu-item1 h1{
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+}
+
+.menu-item1 p{
+    padding-right: 0rem;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.menu-item1 button{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+.menu-item2{
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 70vh;
+}
+
+
+.menu-item2 h1{
+    padding-left: 2rem;
+    padding-bottom: 0rem;
+}
+
+.menu-item2 p{
+    padding-top: 1.5rem;
+    padding-right: 9rem;
+    padding-left: 2.3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-item2 button{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.menu-item3 h1{
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.menu-item3 p{
+    padding-right: 0rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-item3 button{
+    padding:auto;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.testimonials-section{
+    width: 1000px;
+    gap: 2rem;
+}
+.testimonials{
+    gap: 2rem;
+    width: 40%;
+   }
+
+.testimonials h6{
+    padding-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.testimonials h1{
+    font-size: 1.5rem;
+}
+
+.testimonials p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.card {
+    min-width: 250px;
+    height: 60vh;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.partners{
+    padding: 1rem;
+    height: 150px;
+    border-radius: 4rem;
+}
+
+.partners p{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color: #8b3a0063;
+}
+.our-partners{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+
+}
+
+.our-partners a{
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 0rem;
+}
+
+
+.explore h6{
+    font-size: 1.2rem;
+}
+
+.explore h1{
+    font-size: 1.7rem;
+}
+
+.explore p{
+    font-size: 1.2rem;
+    padding: 0 10rem;
+}
+
+
+.explore-containers{
+    gap: 1rem;
+}
+
+.explore-container1 h1{
+    font-size: 1.7rem;
+    padding-left: 0;
+}
+
+.explore-container1 p{
+    font-size: 1.2rem;
+}
+
+.explore-container1 button{
+    font-size: 1.2rem;
+}
+
+.explore-container2 h1{
+    font-size: 1.7rem;
+}
+
+.explore-container2 p{
+    font-size: 1.2rem;
+    
+}
+
+.explore-container2 button{
+    font-size: 1.2rem;
+}
+
+.explore-container3 h1{
+    font-size: 1.7rem;
+
+}
+
+.explore-container3 p{
+    font-size: 1.2rem;
+}
+
+.explore-container3 button{
+    font-size: 1.2rem;
+}
+
+
+.community{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    gap: 1rem;
+}
+
+.community-description{
+    gap: 1rem;
+    width: 50%;
+}
+
+.community-description h6{
+   font-size: 1.2rem;
+}
+
+.community-description h1{
+   font-size: 1.7rem;
+}
+
+.community-description p{
+   font-size: 1.2rem;
+}
+
+
+.community-description button{
+    font-size: 1.2rem;
+}
+
+.community-image img{
+    border-radius: 1.5rem;
+}
+
+
+.FAQSECTION1 h6{
+    font-size: 1.3rem;
+}
+
+.FAQSECTION1 h1{
+    font-size: 1.7rem;
+}
+
+.FAQSECTION1 p{
+    font-size: 1.3rem;
+}
+
+
+.accordion .content-container .question{
+    font-size: 1.3rem;
+   
+}
+
+.accordion .content-container .question::after{
+     font-size: 1.7rem;
+}
+
+.accordion .content-container .answer{
+    font-size: 1.3rem;
+}
+
+.accordion .content-container.active .answer{
+    height: 150px;
+}
+
+.accordion .content-container.active .question{
+    font-size: 1.1rem;
+}
+
+.accordion .content-container.active .question::after{
+    font-size: 1.7rem;
+}
+
+.get-in-touch h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.get-in-touch h1{
+    font-size: 1.6rem;
+}
+
+.get-in-touch p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+
+.contact{
+    padding: 2rem;
+}
+
+.contact-details{
+    padding-left: 0;
+    width: 50%;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.2rem;
+}
+
+.contact-details1  p{
+    font-size: 1.2rem;
+}
+
+
+.contact-details2 a {
+    position:relative;
+    display: inline-block;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1.2rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 1rem;
+    gap: 1rem;
+    width: 50%;
+}
+
+.message h1{
+    color:#8b3a00;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+.message1{
+    display: flex;
+    font-size: 1.2rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+
+}
+
+ form{
+    gap: 1rem;
+
+ }
+
+ label{
+    font-size: 1.2rem;
+ }
+
+ input, textarea{
+    width: 400px;
+    font-size: 1.2rem; 
+ }
+
+ ::placeholder{
+    font-size: 1.2rem;
+ }
+
+ form button{
+    font-size: 1.2rem;
+    width: 400px;
+ }
+
+ 
+.links1 a{
+    font-size: 1.2rem;
+}
+
+.links2 a{
+    font-size: 1.2rem;
+}
+
+.links3 a{
+    font-size: 1.2rem;
+}
+
+.bitestreet1 p{
+    font-size: 1.2rem;
+}
+
+
+
+.bitestreet2 p{
+    font-size: 2rem;
+    padding-right: 20rem;
+}
+
+.bitestreet2 button{
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+}
+
+ .bitestreet1{
+    margin-top: 3rem;
+ }
+
+
+ 
+.image-containeer{
+    width: 440px;
+    height: 350px;
+}
+.image-containeer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+
+
+
+
+
+
+ }
+ @media(min-width: 1280px){
+    .utility-container{
+
+        min-width: 1280px;
+    }
+    
+    .menu-button{
+        display: none;
+    }
+
+    
+    .section{
+        margin-top: 3rem;
+        margin-bottom: 0;
+    }
+
+    
+nav a{
+    height:50px;
+    font-size: 1.5rem;
+    
+}
+
+.nav-left {
+  justify-content: flex-start;
+  padding-right: 11.5rem;
+}
+
+.nav-right {
+  justify-content: flex-end;
+  padding-left: 11.5rem;
+}
+    
+.text-overlay{
+    min-height:75vh;
+}
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: .5rem;
+    width: 400px;
+}
+.text-overlay h1{
+    font-size: 2.3rem;
+}
+
+.text-overlay p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.text-overlay button{
+    font-size: 1.3rem;
+    font-weight: 400;
+   }
+ 
+   
+.quater h2{
+    font-size: 2rem;
+    padding-right: 15rem;
+}
+
+.quater h6{
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-right: 25.5rem;
+}
+
+.quater p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.quater button{
+    margin-left:-15rem;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    border: none;
+}
+
+.quater button:hover{
+    border: 3px solid blue;
+}
+
+.quater{
+    gap: 2rem;
+}
+
+.Services{
+   display: flex;
+   gap: 1rem;
+}
+
+
+.menu p{
+    font-size: 1.3rem;
+    font-size: 400;
+    padding-left: 12rem;
+    padding-right: 12rem;
+}
+
+
+.menu1{
+    gap: 4rem;
+    width: 1260px;
+    height: 60vh;
+   }
+
+
+.menu-text1{
+    height: 50vh;
+}
+.menu-text1 h1{
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    
+}
+
+.menu-text1 p{
+    font-size: 1.3rem;
+    padding-bottom: 1.5rem;
+
+}
+.menu-text1 button{
+    font-size: 1.3rem;
+}
+
+.menu-text2{
+    height: 50vh;
+}
+.menu-text2 h1{
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    
+}
+
+.menu-text2 p{
+    font-size: 1.3rem;
+    padding-bottom: 1.5rem;
+
+}
+.menu-text2 button{
+    font-size: 1.3rem;
+   
+}
+
+
+
+.menu-text3{
+    gap: 2rem;
+    padding: 1.5rem;
+    width: 650px;
+    height: 70vh;
+}
+
+.menu-text3 h1{
+    font-size: 2rem;
+    
+}
+
+
+.menu1{
+    width: 1260px;
+}
+
+.menu-item1{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    gap: .5rem;
+    width: 100%;
+    height: 60vh;
+}
+
+.menu-item1 h1{
+    padding-top: .5rem;
+    padding-left: 3rem;
+    font-size: 2rem;
+}
+
+.menu-item1 p{
+    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-top: 0rem;
+    font-size: 1.3rem;
+}
+
+.menu-item1 button{
+    margin-left: 3rem;
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    
+}
+.menu-item2{
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 60vh;
+
+}
+
+
+.menu-item2 h1{
+    padding-left: 5rem;
+    padding-bottom: 0rem;
+    
+}
+
+.menu-item2 p{
+    padding-top: .5rem;
+    padding-right: 11rem;
+    padding-left: 5.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.menu-item2 button{
+    margin-left: 5rem;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+}
+.menu-item3{
+    padding-left: 0rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.menu-item3 h1{
+    padding-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.menu-item3 p{
+    padding-right: 0rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.menu-item3 button{
+    padding:auto;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+
+
+.testimonials-section{
+    width: 1260px;
+    gap: 2rem;
+}
+.testimonials{
+    gap: 2rem;
+    width: 40%;
+   }
+
+.testimonials h6{
+    padding-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.testimonials h1{
+    font-size: 2rem;
+}
+
+.testimonials p{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+
+.card {
+    min-width: 300px;
+    height: 55vh;
+    gap: 1rem;
+    padding-top: 3rem;
+    align-items: flex-start;
+    display: flex column
+}
+
+.card p{
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.card span{
+    font-size: 1.3rem;
+    padding-left: 2rem;
+}
+
+
+.partners{
+    padding: 2rem;
+    height: 120px;
+    border-radius: 4rem;
+    background-color: whitesmoke;
+}
+
+.partners p{
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+    color: rgba(0, 0, 255, 0.466);
+}
+.our-partners{
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    align-items: center;
+    padding: 0 .5rem;
+
+}
+
+.our-partners a{
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+
+
+.explore h6{
+    font-size: 1.3rem;
+}
+
+.explore h1{
+    font-size: 2rem;
+    padding: 0 26rem;
+}
+
+.explore p{
+    font-size: 1.3rem;
+    padding: 0 20rem;
+}
+
+
+.explore-containers{
+    gap: 2rem;
+    height: 50vh;
+}
+
+.explore-container1{
+    gap: 1rem;
+    
+}
+.explore-container1 h1{
+    font-size: 2rem;
+    padding-left: 0;
+    padding-bottom: 1rem;
+}
+
+.explore-container1 p{
+    font-size: 1.3rem; 
+    padding-bottom: 1rem;
+}
+
+.explore-container1 button{
+    font-size: 1.3rem;
+}
+
+.explore-container2 h1{
+    font-size: 2rem;
+}
+
+.explore-container2 p{
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+    
+}
+
+.explore-container2 button{
+    font-size: 1.3rem;
+}
+
+.explore-container3 h1{
+    font-size: 2rem;
+
+}
+
+.explore-container3 p{
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+}
+
+.explore-container3 button{
+    font-size: 1.3rem;
+}
+
+
+.community{
+    width: 1260px;
+}
+
+.community-description{
+    gap: 2rem;
+}
+
+.community-description h6{
+   font-size: 1.3rem;
+}
+
+.community-description h1{
+   font-size: 2rem;
+}
+
+.community-description p{
+   font-size: 1.3rem;
+}
+
+
+.community-description button{
+    font-size: 1.3rem;
+}
+
+
+
+.FAQSECTION1 h6{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.FAQSECTION1 h1{
+    font-size: 2rem;
+}
+
+.FAQSECTION1 p{
+    font-size: 1.3rem;
+}
+
+
+.accordion .content-container .question{
+    font-size: 1.3rem;
+   
+}
+
+.accordion .content-container .question::after{
+     font-size: 2rem;
+}
+
+.accordion .content-container .answer{
+    font-size: 1.3rem;
+}
+
+.accordion .content-container.active .answer{
+    height: 100px;
+}
+
+.accordion .content-container.active .question{
+    font-size: 1.2rem;
+}
+
+.accordion .content-container.active .question::after{
+    font-size: 2rem;
+}
+
+
+.get-in-touch h6{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.get-in-touch h1{
+    font-size: 1.7rem;
+}
+
+.get-in-touch p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+
+.contact{
+    padding: 2rem;
+}
+
+.contact-details{
+    padding-left: 0;
+    width: 50%;
+}
+.contact-details h1{
+    font-size: 1.5rem;
+}
+
+.contact-details1  {
+    font-size: 1.3rem;
+}
+
+.contact-details1  p{
+    font-size: 1.3rem;
+}
+
+.contact-details2 a {
+    position:relative;
+    display: inline-block;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.contact-details3 p{
+    padding-top: 2rem;
+   font-size: 1.3rem;
+   font-weight: 400;
+}
+
+.message{
+    margin-top: 1rem;
+    gap: 1rem;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message h1{
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+.message1{
+    display: flex;
+    font-size: 1.3rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+}
+
+ form{
+    gap: 1rem;
+ }
+
+ label{
+    font-size: 1.3rem;
+ }
+
+ input, textarea{
+    width: 550px;
+    font-size: 1.3rem; 
+ }
+
+ ::placeholder{
+    font-size: 1.3rem;
+ }
+
+ form button{
+    font-size: 1.3rem;
+    width: 550px;
+ }
+ .the-end{
+    gap: 3rem;
+ }
+ 
+
+ .bitestreet1{
+    margin-top: 3rem;
+    background-color: whitesmoke;
+    color:blue;
+ }
+
+ 
+ 
+.links1 a{
+    font-size: 1.3rem;
+    color: blue;
+}
+
+.links2 a{
+    font-size: 1.3rem;
+    color: blue;
+    
+}
+
+.links3 a{
+    font-size: 1.3rem;
+    color: blue;
+}
+
+.bitestreet1 p{
+    font-size: 1.3rem;
+    color: blue;
+}
+
+
+
+.bitestreet2 p{
+  color: blue;
+    font-size: 2rem;
+    padding-right: 20rem;
+}
+
+.bitestreet2 button{
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    margin-top: 3rem;
+    border-radius: 2rem;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+.bitestreet2 button:hover{
+  background-color: whitesmoke;
+  color: blue;
+  border: 2px solid blue;
+}
+
+
+.image-containeer{
+    width: 550px;
+    height: 380px;
+}
+
+.image-containeer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+
+.FAQSECTION2{
+  width: 550px;
+  display: flex;
+}
+
+
+ }
+ @media(min-width: 1536px){
+    .utility-container{
+
+        min-width: 1536px;
+    }
+
+    
+    .menu-button{
+        display: none;
+    }
+
+    
+nav a{
+    height:50px;
+    font-size: 1.5rem;
+    
+}
+
+.nav-left {
+  justify-content: flex-start;
+  padding-right: 11.5rem;
+}
+
+.nav-right {
+  justify-content: flex-end;
+  padding-left: 11.5rem;
+}
+    
+.text-overlay{
+    min-height:80vh;
+}
+
+.overlay{
+  display: block;
+  width: 600px;
+  }
+.text-overlay h1{
+    font-size: 3rem;
+    padding-top: 0rem;
+}
+
+.text-overlay p{
+    font-size: 2rem;
+    padding-top: 0rem;
+    padding-right: 2rem;
+}
+
+.text-overlay button{
+    font-size: 2rem;
+    margin-left: 10rem;
+   }
+
+   
+.quater h2{
+    font-size: 2.5rem;
+    padding-right: 15rem;
+}
+
+.quater h6{
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-right: 25.5rem;
+}
+
+.quater p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.quater button{
+    margin-right:20.5rem;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
+.quater{
+    gap: .1rem;
+}
+
+.Services{
+   display: flex;
+   gap: 2.7rem;
+}
+
+.menu p{
+    font-size: 1.2rem;
+    font-size: 400;
+    padding-left: 12rem;
+    padding-right: 12rem;
+}
+
+
+.menu1{
+    width: 1500px;
+}
+
+.menu-text1 h1{
+    font-size: 2rem;
+    padding-bottom: 1.8rem;
+}
+
+.menu-text1 p{
+    padding-bottom: 1.8rem;
+
+}
+.menu-text2 h1{
+    padding-bottom: 1.8rem;
+}
+
+.menu-text2 p{
+    padding-bottom: 1.8rem;
+}
+
+
+.menu-text3{
+    width: 1500px;
+}
+
+.menu-text3 p{
+  padding-right: 55rem;
+}
+
+
+.menu1{
+    width: 1510px;
+}
+
+.menu-item1{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    gap: .5rem;
+    width: 100%;
+    height: 60vh;
+}
+
+.menu-item1 h1{
+    font-size: 2.3rem;
+}
+
+.menu-item1 p{
+    font-size: 1.4rem;
+}
+
+.menu-item1 button{
+    font-size: 1.4rem;
+    
+}
+
+.menu-item2 h1{
+    font-size: 2.3;
+    
+}
+
+.menu-item2 p{
+    font-size: 1.3rem;
+}
+
+.menu-item2 button{
+    font-size: 1.4rem;
+}
+
+.menu-item3 h1{
+    font-size: 2.3rem;
+}
+
+.menu-item3 p{
+    font-size: 1.4rem;
+}
+
+.menu-item3 button{
+    font-size: 1.4rem;
+}
+
+
+.explore p{
+    font-size: 1.3rem;
+    padding: 0 22rem;
+}
+
+
+.explore-containers{
+    gap: 1rem;
+}
+
+.explore-container1 h1{
+    font-size: 2rem;
+    padding-left: 0;
+}
+
+.explore-container1 p{
+    font-size: 1.3rem;
+}
+
+.explore-container1 button{
+    font-size: 1.3rem;
+}
+
+.explore-container2 h1{
+    font-size: 2rem;
+}
+
+.explore-container2 p{
+    font-size: 1.3rem;
+    
+}
+
+.explore-container2 button{
+    font-size: 1.3rem;
+}
+
+.explore-container3 h1{
+    font-size: 2rem;
+
+}
+
+.explore-container3 p{
+    font-size: 1.3rem;
+}
+
+.explore-container3 button{
+    font-size: 1.3rem;
+}
+
+
+.community{
+    width: 1510px;
+}
+
+.community-description{
+    gap: 1rem;
+}
+
+.community-description h6{
+   font-size: 1.4rem;
+}
+
+.community-description h1{
+   font-size: 2rem;
+}
+
+.community-description p{
+   font-size: 1.4rem;
+}
+
+
+.community-description button{
+    font-size: 1.4rem;
+}
+
+.community-description button{
+    font-size: 1.3rem;
+}
+.community-image{
+   width: 200%;
+   height: auto;
+   border-radius: 1rem;
+   padding-top: 10rem;
+   padding-bottom: -5;
+}
+
+.accordion{
+  width: 700px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  gap: 3rem;
+}
+.FAQSECTION1{
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.FAQSECTION1 h6{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.FAQSECTION1 h1{
+    font-size: 2rem;
+}
+
+.FAQSECTION1 p{
+    font-size: 1.3rem;
+}
+
+
+.accordion .content-container .question{
+    font-size: 1.4rem;
+   
+}
+
+.accordion .content-container .question::after{
+     font-size: 1.5rem;
+}
+
+.accordion .content-container .answer{
+    font-size: 1.2rem;
+}
+
+.accordion .content-container.active .question{
+    font-size: 1.2rem;
+}
+
+
+
+  }
