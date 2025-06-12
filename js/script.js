@@ -48,89 +48,66 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Accordion for FAQ section
+document.addEventListener("DOMContentLoaded", function () {
+  const accordions = document.querySelectorAll(".content-container");
 
-
-
-
-
-
-/*   const track = document.querySelector('.carousel-track');
-  const leftBtn = document.querySelector('.carousel-btn.left');
-  const rightBtn = document.querySelector('.carousel-btn.right');
- 
-  const scrollAmount = 400; 
-
-  leftBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-
-  rightBtn.addEventListener('click', () => {
-    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
-
-
-
-
-const messageSend = document.getElementById("messagee");
-
-messageSend.addEventListener('click', () => {
-// Removed duplicate showSidebar and hideSidebar functions to avoid conflicts with hamburger menu logic
-function showSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
-        
-        function hideSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'none'
-        }
-
-
-const accordion = document.getElementsByClassName('content-container');
-
-for(i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener('click', function (){
-        this.classList.toggle('active');
-    });
-};
-
-
-function showMore (){
-    const content = document.getElementById("moreInfo");
-    if(content.style.display === "none"){
-        content.style.display = "block";
-    } else{
-        content.style.display = "none";
+  accordions.forEach(container => {
+    const question = container.querySelector(".question");
+    if (question) {
+      question.addEventListener("click", () => {
+        container.classList.toggle("active");
+      });
     }
-}
+  });
 
+  // FAQ toggle for elements with class 'FAQ'
+  const accordionFAQ = document.getElementsByClassName('FAQ');
+  for(let i = 0; i < accordionFAQ.length; i++) {
+    accordionFAQ[i].addEventListener('click', function (){
+      this.classList.toggle('active');
+    });
+  }
 
+  // Show more/less functionality
+  window.showMore = function () {
+    const content = document.getElementById("moreInfo");
+    if(content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  };
 
-
+  // Carousel functionality
   const track = document.querySelector('.carousel-track');
   const leftBtn = document.querySelector('.carousel-btn.left');
   const rightBtn = document.querySelector('.carousel-btn.right');
- 
   const scrollAmount = 400; 
 
-  leftBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
+  if (leftBtn && track) {
+    leftBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  }
 
-  rightBtn.addEventListener('click', () => {
-    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
+  if (rightBtn && track) {
+    rightBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
 
-
-
-
-const messageSend = document.getElementById("messagee");
-
-messageSend.addEventListener('click', () => {
-    const confirmation = document.getElementById("confirmation");
-    confirmation.style.display = "block";
-
-    setTimeout(() => {
-        confirmation.style.display = "none";
-    }, 10000); 
+  // Message send confirmation
+  const messageSend = document.getElementById("messagee");
+  if (messageSend) {
+    messageSend.addEventListener('click', () => {
+      const confirmation = document.getElementById("confirmation");
+      if (confirmation) {
+        confirmation.style.display = "block";
+        setTimeout(() => {
+          confirmation.style.display = "none";
+        }, 10000); 
+      }
+    });
+  }
 });
